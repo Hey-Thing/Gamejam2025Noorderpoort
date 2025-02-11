@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Threading;
 
 public class JobMinigameVR : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class JobMinigameVR : MonoBehaviour
     [SerializeField] private TMP_Text _answerText;
     [SerializeField] private int _minValue = 1;
     [SerializeField] private int _maxValue = 50;
+
+    [SerializeField] private float _timeLimit = 10f;
+    private float _timeRemaining;
+    private bool _timeIsUp = false;
+
 
     private int _number1;
     private int _number2;
@@ -36,7 +42,23 @@ public class JobMinigameVR : MonoBehaviour
         _number1Text.text = _number1.ToString();
         _number2Text.text = _number2.ToString();
         _answerText.text = "";
+
+        _timeRemaining = _timeLimit;
+        _timeIsUp = false;
+        StartCoroutine(Timer());
     }
+
+    private IEnumerator Timer()
+    {
+        while (_timeRemaining > 0f && !_timeIsUp)
+        {
+            _timeRemaining -= Time.deltaTime;
+            yield return null;
+        }
+        _timeIsUp = true;
+        CheckAnswer();
+    }
+
 
     public void AppendDigit(int digit)
     {
@@ -55,20 +77,22 @@ public class JobMinigameVR : MonoBehaviour
 
     public void CheckAnswer()
     {
+        if (_timeIsUp) return;
+
         if (int.TryParse(_userInput, out int userAnswer))
         {
             if (userAnswer == _answer)
             {
-                _feedbackText.text = "✅ Correct!";
+                _feedbackText.text = "Correct!";
             }
             else
             {
-                _feedbackText.text = "❌ Incorrect! Correct answer: " + _answer;
+                _feedbackText.text = "wrong" + _answer;
             }
         }
         else
         {
-            _feedbackText.text = "⚠️ Enter a valid number!";
+            _feedbackText.text = "invalid number!";
         }
     }
 
