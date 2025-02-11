@@ -12,6 +12,7 @@ public class JobMinigameVR : MonoBehaviour
     [SerializeField] private int _minValue = 1;
     [SerializeField] private int _maxValue = 50;
     [SerializeField] private TMP_Text _timerText;
+    [SerializeField] private GameObject Boss;
 
     [SerializeField] private float _timeLimit = 10f;
     private float _timeRemaining;
@@ -25,6 +26,8 @@ public class JobMinigameVR : MonoBehaviour
     void Start()
     {
         GenerateEquation();
+        Boss.SetActive(false);
+
     }
 
     private int RandomNumber()
@@ -93,12 +96,14 @@ public class JobMinigameVR : MonoBehaviour
                 {
                     _feedbackText.text = "Incorrect! " + _answer;
                     Debug.Log("Make Boss appear here...");
+                    Boss.SetActive(true);
                 }
             }
             else
             {
                 _feedbackText.text = "Invalid!";
                 Debug.Log("Make Boss appear here...");
+                Boss.SetActive(true);
             }
 
             StartCoroutine(WaitBeforeNewEquation());
