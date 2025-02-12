@@ -54,6 +54,7 @@ public class BeerBottle : MonoBehaviour
             Debug.Log("Beer dropped! Cap can't be removed anymore.");
             if (capInteractable != null)
                 capInteractable.enabled = false;
+                capRb.isKinematic = false;
         }
     }
 
