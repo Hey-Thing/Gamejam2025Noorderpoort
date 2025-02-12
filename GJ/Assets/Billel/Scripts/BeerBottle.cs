@@ -8,10 +8,11 @@ public class BeerBottle : MonoBehaviour
     public float drinkDistance = 0.2f;
     public float drinkTiltAngle = 60f;
     public Material beerMaterial;
-    public UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable capInteractable; // Assign the cap object in the inspector
+    public UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable capInteractable; // Assign cap object in Inspector
+    public Rigidbody capRb; // Assign cap Rigidbody in Inspector
+
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
     private AudioSource audioSource;
-
     private bool isDrinking = false;
     private bool capRemoved = false;
     private int drinkCount = 0;
@@ -31,7 +32,7 @@ public class BeerBottle : MonoBehaviour
 
         if (capInteractable != null)
         {
-            capInteractable.enabled = false; // Disable grabbing until beer is held
+            capInteractable.enabled = false; // Cap can't be grabbed until beer is held
             capInteractable.selectEntered.AddListener(OnCapGrabbed);
         }
 
@@ -58,17 +59,21 @@ public class BeerBottle : MonoBehaviour
 
     void OnCapGrabbed(SelectEnterEventArgs args)
     {
+        if (capRemoved) return; // Prevent multiple triggers
+
         Debug.Log("Cap removed!");
 
-        // Unparent the cap so it detaches
+        // Fully detach the cap from the bottle
         capInteractable.transform.parent = null;
 
-        // Allow physics interaction
-        Rigidbody capRb = capInteractable.GetComponent<Rigidbody>();
+        // Enable physics on the cap
         if (capRb != null)
         {
             capRb.isKinematic = false;
             capRb.useGravity = true;
+
+            // Apply an upward force to simulate popping off
+            capRb.AddForce(transform.up * 2f, ForceMode.Impulse);
         }
 
         capRemoved = true;
