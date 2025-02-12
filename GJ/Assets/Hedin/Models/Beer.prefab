@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c8d95d6d45759d94c83c88b9c391f5ca, type: 2}
     - target: {fileID: 919132149155446097, guid: b6c8630aef77cb946a7fe74d9be7d76a, type: 3}
       propertyPath: m_Name
-      value: Beer (1)
+      value: Beer
       objectReference: {fileID: 0}
     - target: {fileID: 7638104345217537351, guid: b6c8630aef77cb946a7fe74d9be7d76a, type: 3}
       propertyPath: m_IsActive
@@ -145,7 +145,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
