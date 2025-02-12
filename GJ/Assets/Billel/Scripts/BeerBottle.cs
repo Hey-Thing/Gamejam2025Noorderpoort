@@ -67,16 +67,6 @@ public class BeerBottle : MonoBehaviour
         // Fully detach the cap from the bottle
         capInteractable.transform.parent = null;
 
-        // Enable physics on the cap
-        if (capRb != null)
-        {
-            capRb.isKinematic = false;
-            capRb.useGravity = true;
-
-            // Apply an upward force to simulate popping off
-            capRb.AddForce(transform.up * 2f, ForceMode.Impulse);
-        }
-
         // After removing the cap, don't allow it to be reattached
         capRemoved = true;
 
