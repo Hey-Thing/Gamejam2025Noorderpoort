@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BeerLiquid
+  m_Name: NoChangeLiqud
   m_Shader: {fileID: -6465566751694194690, guid: c7ebaa3e8d5f3014ba152fab23f46841, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -16,7 +16,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 1976
+  m_CustomRenderQueue: 2976
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -37,7 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Fill: 0.7
+    - _Fill: 0.71
     - _FresnelPower: 3
     - _QueueControl: 0
     - _QueueOffset: -24
