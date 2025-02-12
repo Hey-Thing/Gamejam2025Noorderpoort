@@ -60,10 +60,11 @@ public class BeerBottle : MonoBehaviour
 
     void OnCapGrabbed(SelectEnterEventArgs args)
     {
-        if (capRemoved) return;
+        if (capRemoved) return; // Prevent multiple triggers
 
         Debug.Log("Cap removed!");
         Destroy(Cap);
+        capRemoved = true;
     }
 
     void Update()
