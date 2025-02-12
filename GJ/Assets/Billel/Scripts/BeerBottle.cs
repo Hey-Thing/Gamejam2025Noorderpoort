@@ -3,6 +3,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class BeerBottle : MonoBehaviour
 {
+    public GameObject Cap;
     public Transform playerHead;
     public AudioClip drinkingSound;
     public float drinkDistance = 0.2f;
@@ -54,7 +55,6 @@ public class BeerBottle : MonoBehaviour
             Debug.Log("Beer dropped! Cap can't be removed anymore.");
             if (capInteractable != null)
                 capInteractable.enabled = false;
-                capRb.isKinematic = false;
         }
     }
 
@@ -64,12 +64,12 @@ public class BeerBottle : MonoBehaviour
 
         Debug.Log("Cap removed!");
 
+        capRb.isKinematic = false;
+        Cap.transform.SetParent(null);
         // Fully detach the cap from the bottle
         capInteractable.transform.parent = null;
-
         // After removing the cap, don't allow it to be reattached
         capRemoved = true;
-
         // Remove any interactable or grab functionality
         capInteractable.enabled = false; // Cap stays detached and can't be grabbed again
     }
