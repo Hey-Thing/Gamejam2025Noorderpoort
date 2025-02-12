@@ -26,10 +26,15 @@ public class drunkeffect : MonoBehaviour
     {
         originalPos = transform.localPosition;
 
-        if (volume.profile.TryGet(out lensDistortion) && volume.profile.TryGet(out motionBlur))
+        if (volume.profile.TryGet(out lensDistortion) &&
+             volume.profile.TryGet(out motionBlur) &&
+             volume.profile.TryGet(out vignette)) 
         {
-            lensDistortion.intensity.Override(beer); 
-            motionBlur.intensity.Override(beer/2);     
+            Debug.Log("Vignette effect found and assigned.");
+        }
+        else
+        {
+            Debug.LogError("One or more effects not found in the Volume profile!");
         }
     }
 
@@ -48,8 +53,9 @@ public class drunkeffect : MonoBehaviour
             vignette.smoothness.value = beer * vignettesmooth;
         }
 
-        float tilt = Mathf.Sin(Time.time * beer) * beer;
+        float tilt = Mathf.Sin(Time.time * beer * wobbleSpeed) * beer * wobbleAmount;
         transform.rotation = Quaternion.Euler(0, 0, tilt);
+
     }
 }
 
