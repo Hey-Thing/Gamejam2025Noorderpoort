@@ -8,10 +8,9 @@ public class BeerBottle : MonoBehaviour
     public float drinkDistance = 0.2f;
     public float drinkTiltAngle = 60f;
     public Material beerMaterial;
-    public UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable capInteractable; // Assign in Inspector
+    public UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable capInteractable; // Assign the cap object in the inspector
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
     private AudioSource audioSource;
-    private FixedJoint capJoint; // Keeps cap attached
 
     private bool isDrinking = false;
     private bool capRemoved = false;
@@ -32,12 +31,8 @@ public class BeerBottle : MonoBehaviour
 
         if (capInteractable != null)
         {
-            capInteractable.enabled = false;
+            capInteractable.enabled = false; // Disable grabbing until beer is held
             capInteractable.selectEntered.AddListener(OnCapGrabbed);
-
-            // Attach cap to bottle using FixedJoint
-            capJoint = capInteractable.gameObject.AddComponent<FixedJoint>();
-            capJoint.connectedBody = GetComponent<Rigidbody>();
         }
 
         grabInteractable.selectEntered.AddListener(OnBeerGrabbed);
@@ -63,12 +58,17 @@ public class BeerBottle : MonoBehaviour
 
     void OnCapGrabbed(SelectEnterEventArgs args)
     {
-        Debug.Log("Cap grabbed! Removing FixedJoint.");
+        Debug.Log("Cap removed!");
 
-        // Remove FixedJoint so the cap detaches
-        if (capJoint != null)
+        // Unparent the cap so it detaches
+        capInteractable.transform.parent = null;
+
+        // Allow physics interaction
+        Rigidbody capRb = capInteractable.GetComponent<Rigidbody>();
+        if (capRb != null)
         {
-            Destroy(capJoint);
+            capRb.isKinematic = false;
+            capRb.useGravity = true;
         }
 
         capRemoved = true;
