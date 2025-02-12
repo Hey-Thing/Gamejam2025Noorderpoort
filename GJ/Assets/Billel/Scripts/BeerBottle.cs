@@ -60,18 +60,10 @@ public class BeerBottle : MonoBehaviour
 
     void OnCapGrabbed(SelectEnterEventArgs args)
     {
-        if (capRemoved) return; // Prevent multiple triggers
+        if (capRemoved) return;
 
         Debug.Log("Cap removed!");
-
-        capRb.isKinematic = false;
-        Cap.transform.SetParent(null);
-        // Fully detach the cap from the bottle
-        capInteractable.transform.parent = null;
-        // After removing the cap, don't allow it to be reattached
-        capRemoved = true;
-        // Remove any interactable or grab functionality
-        capInteractable.enabled = false; // Cap stays detached and can't be grabbed again
+        Destroy(Cap);
     }
 
     void Update()
