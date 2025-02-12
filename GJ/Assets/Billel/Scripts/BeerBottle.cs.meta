@@ -3,7 +3,10 @@ guid: 7d7fbde9bf1ce4140bf4a6cce2c06dbf
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerHead: {instanceID: 0}
+  - drinkingSound: {fileID: 8300000, guid: 97a606ded88a421449000098f352e25f, type: 3}
+  - beerMaterial: {fileID: 2100000, guid: c8d95d6d45759d94c83c88b9c391f5ca, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
