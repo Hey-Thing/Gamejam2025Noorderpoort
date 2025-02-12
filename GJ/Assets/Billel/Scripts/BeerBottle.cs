@@ -13,7 +13,7 @@ public class BeerBottle : MonoBehaviour
 
     private bool isDrinking = false;
     private int drinkCount = 0;
-    private float maxFill = 0.18f;
+    private float maxFill = 0.16f;
     private float minFill = 0f;
     private float fillStep;
 
@@ -54,6 +54,8 @@ public class BeerBottle : MonoBehaviour
                 drinkCount++;
                 float newFill = Mathf.Max(minFill, maxFill - (fillStep * drinkCount));
                 beerMaterial.SetFloat("_Fill", newFill);
+
+                Debug.Log("Drinking beer! Fill level: " + newFill);
 
                 if (drinkingSound) audioSource.Play();
             }
