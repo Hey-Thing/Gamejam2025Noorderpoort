@@ -76,7 +76,11 @@ public class BeerBottle : MonoBehaviour
             capRb.AddForce(transform.up * 2f, ForceMode.Impulse);
         }
 
+        // After removing the cap, don't allow it to be reattached
         capRemoved = true;
+
+        // Remove any interactable or grab functionality
+        capInteractable.enabled = false; // Cap stays detached and can't be grabbed again
     }
 
     void Update()
