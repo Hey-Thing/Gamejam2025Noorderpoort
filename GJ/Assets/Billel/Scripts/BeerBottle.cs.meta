@@ -6,7 +6,7 @@ MonoImporter:
   defaultReferences:
   - playerHead: {instanceID: 0}
   - drinkingSound: {fileID: 8300000, guid: 97a606ded88a421449000098f352e25f, type: 3}
-  - beerMaterial: {fileID: 2100000, guid: ce02e25ae4536af4a8c9b4745f49b4ac, type: 2}
+  - beerMaterial: {fileID: 2100000, guid: c8d95d6d45759d94c83c88b9c391f5ca, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
