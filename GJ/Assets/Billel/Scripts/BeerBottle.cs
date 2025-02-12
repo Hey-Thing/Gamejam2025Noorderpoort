@@ -12,10 +12,11 @@ public class BeerBottle : MonoBehaviour
     private AudioSource audioSource;
 
     private bool isDrinking = false;
-    private int drinkCount = 0;
+    public int drinkCount = 0;
     private float maxFill = 0.18f;
     private float minFill = 0f;
     private float fillStep;
+    public drunkeffect drunkeffect;//assign main camera
 
     void Start()
     {
@@ -52,6 +53,7 @@ public class BeerBottle : MonoBehaviour
             {
                 isDrinking = true;
                 drinkCount++;
+                drunkeffect.beer ++;
                 float newFill = Mathf.Max(minFill, maxFill - (fillStep * drinkCount));
                 beerMaterial.SetFloat("_Fill", newFill);
 
