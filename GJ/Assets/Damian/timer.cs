@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("MainMenuTest");
         }
     }
 }
