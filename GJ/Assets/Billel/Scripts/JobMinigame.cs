@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class JobMinigameVR : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class JobMinigameVR : MonoBehaviour
     [SerializeField] private int _maxValue = 50;
     [SerializeField] private TMP_Text _timerText;
     [SerializeField] private GameObject Boss;
+    public GameController gameController;  // Reference to GameController
 
     [SerializeField] private float _timeLimit = 10f;
     private float _timeRemaining;
@@ -81,34 +83,36 @@ public class JobMinigameVR : MonoBehaviour
         _answerText.text = "";
     }
 
-    public void CheckAnswer()
+public void CheckAnswer()
+{
+    if (_timeIsUp)
     {
-        if (_timeIsUp)
+        if (int.TryParse(_userInput, out int userAnswer))
         {
-            if (int.TryParse(_userInput, out int userAnswer))
+            if (userAnswer == _answer)
             {
-                if (userAnswer == _answer)
-                {
-                    _feedbackText.text = "Correct!";
-                    Debug.Log("Gain score...");
-                }
-                else
-                {
-                    _feedbackText.text = "Incorrect! " + _answer;
-                    Debug.Log("Make Boss appear here...");
-                    Boss.SetActive(true);
-                }
+                _feedbackText.text = "Correct!";
+                gameController.AddScore(10);
             }
             else
             {
-                _feedbackText.text = "Invalid!";
+                _feedbackText.text = "Incorrect! " + _answer;
                 Debug.Log("Make Boss appear here...");
                 Boss.SetActive(true);
+                SceneManager.LoadScene("Nacht");
             }
-
-            StartCoroutine(WaitBeforeNewEquation());
         }
+        else
+        {
+            _feedbackText.text = "Invalid!";
+            Debug.Log("Make Boss appear here...");
+            SceneManager.LoadScene("Nacht");
+        }
+
+        StartCoroutine(WaitBeforeNewEquation());
     }
+}
+
 
     private IEnumerator WaitBeforeNewEquation()
     {

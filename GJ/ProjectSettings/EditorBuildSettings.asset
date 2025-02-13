@@ -6,20 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 55daccc09a3b69647bbab145b54a3ab3
-  - enabled: 1
-    path: Assets/Damian/damian1.unity
-    guid: e5b37b769f5794c4e9fdd44b8ec28be7
-  - enabled: 1
-    path: Assets/Damian/damian.unity
-    guid: e8d29dd075a871e41a5014c7f877ec64
+    path: Assets/Billel/MainMenuTest.unity
+    guid: 9ab36c134cf0ecc479d56f7be6aadc39
   - enabled: 1
     path: Assets/Billel/Office.unity
     guid: b44d0a5070d51f54988e575d058101fc
   - enabled: 1
-    path: Assets/Hedin/Scene/MainMenu.unity
-    guid: 4cedb70594caf634b81cac0e2a9dd566
+    path: Assets/Billel/damian.unity
+    guid: 551f8884e5d111d42836680eb0da6447
+  - enabled: 1
+    path: Assets/Billel/damian1.unity
+    guid: 86ef2eed355d4124899dc6e17d5cd906
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
