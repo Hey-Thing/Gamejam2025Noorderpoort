@@ -88,7 +88,7 @@ void CheckDrinking()
 
     if (distance < drinkDistance && tilt > drinkTiltAngle)
     {
-        if (!isDrinking && drinkCount < 4)
+        if (!isDrinking && drinkCount < 5)
         {
             isDrinking = true;
             drinkCount++;
@@ -103,7 +103,9 @@ void CheckDrinking()
         }
         else if (drinkCount == 4)
         {
-            Debug.Log("Beer empty!");
+                Destroy(gameObject, 3f);
+
+                Debug.Log("Beer empty!");
         }
     }
     else
