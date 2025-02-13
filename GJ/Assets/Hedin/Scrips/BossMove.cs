@@ -23,42 +23,17 @@ public class BossMove : MonoBehaviour
 		transform.position = waypoints[0].position;
 	}
 
-	void Update()
-	{
-		// If the player is within the danger radius and holding the beer bottle, stop moving and look at the camera
-		if (IsPlayerInDangerArea() && IsPlayerHoldingBeerBottle())
-		{
-			StopAndLookAtCamera();
-		}
-		else
-		{
-			// Otherwise, move normally through the waypoints
-			if (waypoints.Length > 0 && !isWaiting)
-			{
-				MoveToNextWaypoint();
-			}
-		}
-	}
+    void Update()
+    {
+        if (waypoints.Length > 0 && !isWaiting)
+        {
+            StartCoroutine(MoveToNextWaypoint()); // Start the coroutine properly
+        }
+    }
 
-	// Check if the player is within the danger radius
-	bool IsPlayerInDangerArea()
-	{
-		if (player != null)
-		{
-			float distance = Vector3.Distance(player.position, transform.position);
-			return distance <= detectionRadius;
-		}
-		return false;
-	}
 
-	// Check if the player is holding the beer bottle
-	bool IsPlayerHoldingBeerBottle()
-	{
-		return beerBottleInteractable != null && beerBottleInteractable.isSelected;
-	}
-
-	// Stop moving and rotate to look at the camera
-	void StopAndLookAtCamera()
+    // Stop moving and rotate to look at the camera
+    void StopAndLookAtCamera()
 	{
 		// Stop moving
 		speed = 0f;
@@ -70,52 +45,60 @@ public class BossMove : MonoBehaviour
 		transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, speed * Time.deltaTime * 100);
 	}
 
-	// Move to the next waypoint (normal movement behavior)
-	void MoveToNextWaypoint()
-	{
-		if (waypoints.Length == 0) return;
+    // Move to the next waypoint (normal movement behavior)
+    IEnumerator MoveToNextWaypoint()
+    {
+        if (waypoints.Length == 0) yield break;
+        if (isWaiting) yield break; // Prevent multiple coroutines running
 
-		// Determine the target waypoint based on direction
-		Transform targetWaypoint = waypoints[currentWaypointIndex];
+        isWaiting = true; // Set waiting flag
 
-		// Rotate the AI to look at the target waypoint
-		Vector3 direction = targetWaypoint.position - transform.position;
-		if (direction != Vector3.zero) // Avoid any division by zero
-		{
-			Quaternion targetRotation = Quaternion.LookRotation(direction);
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, speed * Time.deltaTime * 100); // Adjust rotation speed
-		}
+        // Determine the target waypoint based on direction
+        Transform targetWaypoint = waypoints[currentWaypointIndex];
 
-		// Move towards the waypoint
-		float step = speed * Time.deltaTime;
-		transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, step);
+        // Rotate the AI to look at the target waypoint
+        Vector3 direction = targetWaypoint.position - transform.position;
+        if (direction != Vector3.zero) // Avoid division by zero
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, speed * Time.deltaTime * 100); // Adjust rotation speed
+        }
 
-		// Check if the AI has reached the waypoint
-		if (Vector3.Distance(transform.position, targetWaypoint.position) < reachThreshold)
-		{
-			// If moving forward and we reach the last waypoint, switch direction
-			if (isMovingForward)
-			{
-				// Move to the next waypoint forward
-				currentWaypointIndex = (currentWaypointIndex + 1);
-				// If we reach the last waypoint, change direction
-				if (currentWaypointIndex == waypoints.Length)
-				{
-					isMovingForward = false; // Start moving backward
-					currentWaypointIndex = waypoints.Length - 2; // Set to the second last waypoint
-				}
-			}
-			else
-			{
-				// Move to the previous waypoint backward
-				currentWaypointIndex = (currentWaypointIndex - 1);
-				// If we reach the first waypoint, change direction
-				if (currentWaypointIndex == -1)
-				{
-					isMovingForward = true; // Start moving forward again
-					currentWaypointIndex = 1; // Set to the second waypoint (index 1)
-				}
-			}
-		}
-	}
+        // Move towards the waypoint
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, step);
+
+        // Check if the AI has reached the waypoint
+        if (Vector3.Distance(transform.position, targetWaypoint.position) < reachThreshold)
+        {
+            // Stop moving and wait for 3 seconds
+            float originalSpeed = speed;
+            speed = 0f;
+            yield return new WaitForSeconds(3f); // Wait time
+            speed = originalSpeed; // Resume movement
+
+            // Handle waypoint switching logic
+            if (isMovingForward)
+            {
+                currentWaypointIndex++;
+                if (currentWaypointIndex == waypoints.Length)
+                {
+                    isMovingForward = false;
+                    currentWaypointIndex = waypoints.Length - 2;
+                }
+            }
+            else
+            {
+                currentWaypointIndex--;
+                if (currentWaypointIndex == -1)
+                {
+                    isMovingForward = true;
+                    currentWaypointIndex = 1;
+                }
+            }
+        }
+
+        isWaiting = false; // Reset waiting flag
+    }
+
 }

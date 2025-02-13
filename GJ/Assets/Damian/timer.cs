@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
             elapsedTime += Time.deltaTime;
             UpdateTimerUI();
 
-            if (elapsedTime >= 120f)
+            if (elapsedTime >= 60f)
             {
                 timerRunning = false;
                 SwitchScene();
