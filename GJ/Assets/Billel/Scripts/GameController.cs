@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Game Started for " + playerName);
-        // Start the game logic
+        SceneManager.LoadScene("Office");
     }
 
     public void AddScore(int points)

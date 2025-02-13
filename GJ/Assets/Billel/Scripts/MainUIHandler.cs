@@ -7,6 +7,7 @@ public class MainUIHandler : MonoBehaviour
     [Header("UI Buttons")]
     public GameObject MainMenu;
     public GameObject NameInput;
+    public GameObject HighScore;
 
     [Header("Name Input")]
     public TMP_InputField nameInputField;  // The name input field
@@ -37,13 +38,24 @@ public class MainUIHandler : MonoBehaviour
         if (!string.IsNullOrEmpty(nameInputField.text))
         {
             playerName = nameInputField.text;
-            gameController.SetPlayerName(playerName); // Send name to GameController
-            //SWAP SCENE HERE
+            gameController.SetPlayerName(playerName);
+            gameController.StartGame();
+
         }
     }
         public void StartBeforeName()
     {
         MainMenu.SetActive(false);
         NameInput.SetActive(true);
+    }
+
+        public void OpenHighscore()
+    {
+        MainMenu.SetActive(false);
+        HighScore.SetActive(true);
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
