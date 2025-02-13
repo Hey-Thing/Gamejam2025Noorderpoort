@@ -16,7 +16,7 @@ public class obsticles : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("MainMenuTest");
             }
         }
     }
