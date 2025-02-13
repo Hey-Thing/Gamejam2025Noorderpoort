@@ -15,12 +15,15 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Game Started for " + playerName);
-        SceneManager.LoadScene("damian");
     }
 
     public void AddScore(int points)
     {
         playerScore += points;
+    }
+        public void RemoveScore(int points)
+    {
+        playerScore -= points;
     }
 
     public void EndGame()
@@ -31,4 +34,12 @@ public class GameController : MonoBehaviour
             Debug.Log("Score saved for " + playerName);
         }
     }
+
+    public void TestAddScoreAndEndGame()
+{
+    AddScore(50); // Add 50 points for testing
+    Debug.Log("Added 50 points. Current score: " + playerScore);
+    EndGame();
+}
+
 }
