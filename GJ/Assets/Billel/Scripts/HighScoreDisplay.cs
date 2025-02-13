@@ -1,30 +1,48 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class HighScoreDisplay : MonoBehaviour
 {
-    public GameController gameController;  // Reference to GameController
-    public TMP_Text highScoreText;  // The TMP Text that will display the high scores
-    public GameObject highScoreUI;  // The High Score UI to activate when the game ends
+    public GameController gameController;
+    public TMP_Text highScoreText;
+    public GameObject highScoreUI;
 
-    // This will be called from the GameController when the game ends
     public void ShowHighScores()
     {
         var highScores = gameController.highScoreManager.GetHighScores();
-        string displayText = "High Scores:\n\n";
+        highScoreText.text = FormatHighScores(highScores);
+        highScoreUI.SetActive(true);
+    }
+
+    public void ShowHighScoresFromMainMenu()
+    {
+        var highScores = FindObjectOfType<HighScoreManager>().GetHighScores();
+        highScoreText.text = FormatHighScores(highScores);
+        highScoreUI.SetActive(true);
+    }
+
+    public void CloseHighScores()
+    {
+        highScoreUI.SetActive(false);
+    }
+
+    private string FormatHighScores(List<HighScoreEntry> highScores)
+    {
+        if (highScores == null || highScores.Count == 0)
+            return "<b><size=36>No High Scores Yet!</size></b>";
+
+        string displayText = "<b><size=40> High Scores </size></b>\n\n";
+        displayText += "<b><size=32>Name           Score</size></b>\n";  // Header
+        displayText += "---------------------------------\n";
 
         foreach (var entry in highScores)
         {
-            displayText += $"{entry.playerName}: {entry.score}\n";
+            string formattedName = entry.playerName.PadRight(15);  // Ensures names are always 15 chars wide
+            string formattedScore = entry.score.ToString().PadRight(5);  // Left-align the score
+            displayText += $"{formattedName} {formattedScore}\n";
         }
 
-        highScoreText.text = displayText;
-        highScoreUI.SetActive(true);  // Show the High Score UI
-    }
-
-    // Optional: Close the High Score UI
-    public void CloseHighScores()
-    {
-        highScoreUI.SetActive(false);  // Hide the High Score UI
+        return displayText;
     }
 }
