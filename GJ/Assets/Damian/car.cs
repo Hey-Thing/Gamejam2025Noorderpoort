@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class CarSteering : MonoBehaviour
 {
@@ -17,11 +19,11 @@ public class CarSteering : MonoBehaviour
 
         Vector3 rightDir = wheelRotation * Vector3.right;
 
-        if (rightDir.x > 0.1f) 
+        if (rightDir.y > 0.1f) 
         {
             transform.position += transform.right * speed * Time.deltaTime;
         }
-        else if (rightDir.x < -0.1f) 
+        else if (rightDir.y < -0.1f) 
         {
             transform.position += -transform.right * speed * Time.deltaTime;
         }

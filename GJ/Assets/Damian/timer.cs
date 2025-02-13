@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerText;
     private float elapsedTime = 0f;
     private bool timerRunning = true;
-    public bool isDamianScene = true;
+    public bool isDayScene = true;
 
     void Update()
     {
@@ -33,13 +33,13 @@ public class Timer : MonoBehaviour
 
     void SwitchScene()
     {
-        if (isDamianScene)
+        if (isDayScene)
         {
-            SceneManager.LoadScene("Damian1"); 
+            SceneManager.LoadScene("Office");
         }
         else
         {
-            SceneManager.LoadScene("Damian"); 
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
