@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Game Started for " + playerName);
-        SceneManager.LoadScene("Dag");
+        SceneManager.LoadScene("damian");
     }
 
     public void AddScore(int points)
