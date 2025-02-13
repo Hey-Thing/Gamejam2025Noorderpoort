@@ -54,6 +54,12 @@ public class MainUIHandler : MonoBehaviour
         MainMenu.SetActive(false);
         HighScore.SetActive(true);
     }
+
+    public void CloseHighScores()
+    {
+        HighScore.SetActive(false);
+        MainMenu.SetActive(true);
+    }
     public void ExitGame()
     {
         Application.Quit();
