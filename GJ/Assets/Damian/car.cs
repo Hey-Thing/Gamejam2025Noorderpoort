@@ -1,53 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
 
-public class Car : MonoBehaviour
+public class CarSteering : MonoBehaviour
 {
-    public float speed = 5;
-    private float basespeed = 5;
-    public float strafespeed = 10;
-
-    public XRNode inputSource = XRNode.RightHand;  
-    private InputDevice device;
-    public Transform steeringWheel;  
-    private float rotationInput = 0f; 
-    private float currentRotation = 0f; 
-
-    void Start()
-    {
-        device = InputDevices.GetDeviceAtXRNode(inputSource);
-    }
+    public Transform wheel;  // Reference to the wheel
+    public float speed = 10f;
 
     void Update()
     {
-        if (device.isValid)
+        if (wheel == null)
         {
-            Vector2 primary2DAxisValue;
-            if (device.TryGetFeatureValue(CommonUsages.primary2DAxis, out primary2DAxisValue))
-            {
-                rotationInput = primary2DAxisValue.x;
-            }
-
-            RotateSteeringWheel(rotationInput);
-
-            transform.position += transform.forward * speed * Time.deltaTime;
+            Debug.LogWarning("Wheel reference is missing!");
+            return;
         }
-    }
 
-    void RotateSteeringWheel(float input)
-    {
-        float steeringAmount = input * 200f;  
-        currentRotation += steeringAmount * Time.deltaTime;
+        Quaternion wheelRotation = wheel.rotation;
 
-        currentRotation = Mathf.Clamp(currentRotation, -90f, 90f);
+        Vector3 rightDir = wheelRotation * Vector3.right;
 
-        steeringWheel.localRotation = Quaternion.Euler(0, currentRotation, 0); 
-    }
-
-    public void AdjustSpeed(float multiplier)
-    {
-        speed = basespeed * multiplier;
+        if (rightDir.x > 0.1f) 
+        {
+            transform.position += transform.right * speed * Time.deltaTime;
+        }
+        else if (rightDir.x < -0.1f) 
+        {
+            transform.position += -transform.right * speed * Time.deltaTime;
+        }
     }
 }
