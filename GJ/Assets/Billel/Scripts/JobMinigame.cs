@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class JobMinigameVR : MonoBehaviour
 {
@@ -98,14 +99,14 @@ public void CheckAnswer()
                 _feedbackText.text = "Incorrect! " + _answer;
                 Debug.Log("Make Boss appear here...");
                 Boss.SetActive(true);
-                gameController.EndGame();
+                SceneManager.LoadScene("Nacht");
             }
         }
         else
         {
             _feedbackText.text = "Invalid!";
             Debug.Log("Make Boss appear here...");
-            gameController.EndGame();
+            SceneManager.LoadScene("Nacht");
         }
 
         StartCoroutine(WaitBeforeNewEquation());
