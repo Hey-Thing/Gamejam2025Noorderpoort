@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 4695798080020831201}
   - component: {fileID: 8057443209608748924}
   m_Layer: 0
-  m_Name: Beer (1)
+  m_Name: Beer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,10 +628,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7fbde9bf1ce4140bf4a6cce2c06dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cap: {fileID: 2718594509706195272}
   playerHead: {fileID: 0}
   drinkingSound: {fileID: 8300000, guid: 97a606ded88a421449000098f352e25f, type: 3}
   drinkDistance: 0.2
   drinkTiltAngle: 60
   beerMaterial: {fileID: 2100000, guid: c8d95d6d45759d94c83c88b9c391f5ca, type: 2}
   capInteractable: {fileID: 6972373314732752597}
+  capRb: {fileID: 2188945567203897704}
+  capRemoved: 0
   drunkEffect: {fileID: 0}
