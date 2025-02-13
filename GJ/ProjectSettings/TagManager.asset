@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - beer
+  - Anchor
+  - car
+  - Boss
   layers:
   - Default
   - TransparentFX
