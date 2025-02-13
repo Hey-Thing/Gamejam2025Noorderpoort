@@ -5,11 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class obsticles : MonoBehaviour
 {
+    public bool isDayScene = true;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("car"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (isDayScene)
+            {
+                SceneManager.LoadScene("Office");
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
         }
     }
 }

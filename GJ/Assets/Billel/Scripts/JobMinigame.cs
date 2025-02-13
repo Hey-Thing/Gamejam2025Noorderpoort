@@ -13,7 +13,7 @@ public class JobMinigameVR : MonoBehaviour
     [SerializeField] private int _minValue = 1;
     [SerializeField] private int _maxValue = 50;
     [SerializeField] private TMP_Text _timerText;
-    [SerializeField] private GameObject Boss;
+   // [SerializeField] private GameObject Boss;
     public GameController gameController;  // Reference to GameController
 
     [SerializeField] private float _timeLimit = 10f;
@@ -28,7 +28,8 @@ public class JobMinigameVR : MonoBehaviour
     void Start()
     {
         GenerateEquation();
-        Boss.SetActive(false);
+        //  Boss.SetActive(false);
+        StartCoroutine(TimerCoroutine());
 
     }
 
@@ -37,6 +38,11 @@ public class JobMinigameVR : MonoBehaviour
         return Random.Range(_minValue, _maxValue + 1);
     }
 
+    IEnumerator TimerCoroutine()
+    {
+        yield return new WaitForSeconds(120f);
+        SceneManager.LoadScene("damian1");
+    }
     private void GenerateEquation()
     {
         _number1 = RandomNumber();
@@ -98,15 +104,15 @@ public void CheckAnswer()
             {
                 _feedbackText.text = "Incorrect! " + _answer;
                 Debug.Log("Make Boss appear here...");
-                Boss.SetActive(true);
-                SceneManager.LoadScene("Nacht");
+              //  Boss.SetActive(true);
+                SceneManager.LoadScene("damian1");
             }
         }
         else
         {
             _feedbackText.text = "Invalid!";
             Debug.Log("Make Boss appear here...");
-            SceneManager.LoadScene("Nacht");
+            SceneManager.LoadScene("damian1");
         }
 
         StartCoroutine(WaitBeforeNewEquation());
