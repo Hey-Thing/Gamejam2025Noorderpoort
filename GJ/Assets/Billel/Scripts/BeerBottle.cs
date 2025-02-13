@@ -21,6 +21,7 @@ public class BeerBottle : MonoBehaviour
     private float maxFill = 0.7f;
     private float fillStep;
     public drunkeffect drunkEffect;
+    public BossBehavior BossBehavior;
 
     void Start()
     {
@@ -44,6 +45,7 @@ public class BeerBottle : MonoBehaviour
 
     void OnBeerGrabbed(SelectEnterEventArgs args)
     {
+        BossBehavior.beerholding = true;
         Debug.Log("Beer grabbed! Now the cap can be removed.");
         if (capInteractable != null)
             capInteractable.enabled = true;
@@ -51,6 +53,7 @@ public class BeerBottle : MonoBehaviour
 
     void OnBeerDropped(SelectExitEventArgs args)
     {
+        BossBehavior.beerholding = false;
         if (!capRemoved)
         {
             Debug.Log("Beer dropped! Cap can't be removed anymore.");
