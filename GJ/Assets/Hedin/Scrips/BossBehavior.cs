@@ -13,6 +13,7 @@ public class BossBehavior : MonoBehaviour
         {
             Debug.Log("fail");
             StartCoroutine(WaitAndLoadScene());
+            //hier voiceline 
         }
     }
 
