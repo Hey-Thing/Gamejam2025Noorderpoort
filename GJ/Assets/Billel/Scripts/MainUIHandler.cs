@@ -48,6 +48,10 @@ public class MainUIHandler : MonoBehaviour
         MainMenu.SetActive(false);
         NameInput.SetActive(true);
     }
+        public void AddSpace()
+    {
+        nameInputField.text += " "; // Append space to input field
+    }
 
         public void OpenHighscore()
     {

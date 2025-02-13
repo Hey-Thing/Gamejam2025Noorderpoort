@@ -30,7 +30,6 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Game Started for " + playerName);
         SceneManager.LoadScene("damian");
-
     }
 
     public void AddScore(int points)
