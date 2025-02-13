@@ -4,12 +4,17 @@ public class GameController : MonoBehaviour
 {
     private int playerScore = 0;
     private string playerName = "";
-
     public HighScoreManager highScoreManager;
 
     public void SetPlayerName(string name)
     {
         playerName = name;
+    }
+
+    public void StartGame()
+    {
+        Debug.Log("Game Started for " + playerName);
+        // Start the game logic
     }
 
     public void AddScore(int points)

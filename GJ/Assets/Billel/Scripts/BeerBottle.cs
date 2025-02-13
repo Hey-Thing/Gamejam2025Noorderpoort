@@ -16,29 +16,30 @@ public class BeerBottle : MonoBehaviour
     private AudioSource audioSource;
     private bool isDrinking = false;
     public bool capRemoved = false;
+    public bool isEmpty = false;
     private int drinkCount = 0;
     private float maxFill = 0.7f;
     private float fillStep;
     public drunkeffect drunkEffect;
 
-void Start()
-{
-    grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
-    audioSource = gameObject.AddComponent<AudioSource>();
-    if (drinkingSound) audioSource.clip = drinkingSound;
-
-    fillStep = 0.11f;
-    beerMaterial.SetFloat("_Fill", maxFill);
-
-    if (capInteractable != null)
+    void Start()
     {
-        capInteractable.enabled = false; // Cap can't be grabbed until beer is held
-        capInteractable.selectEntered.AddListener(OnCapGrabbed);
-    }
+        grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        if (drinkingSound) audioSource.clip = drinkingSound;
 
-    grabInteractable.selectEntered.AddListener(OnBeerGrabbed);
-    grabInteractable.selectExited.AddListener(OnBeerDropped);
-}
+        fillStep = 0.11f;
+        beerMaterial.SetFloat("_Fill", maxFill);
+
+        if (capInteractable != null)
+        {
+            capInteractable.enabled = false; // Cap can't be grabbed until beer is held
+            capInteractable.selectEntered.AddListener(OnCapGrabbed);
+        }
+
+        grabInteractable.selectEntered.AddListener(OnBeerGrabbed);
+        grabInteractable.selectExited.AddListener(OnBeerDropped);
+    }
 
 
     void OnBeerGrabbed(SelectEnterEventArgs args)
@@ -77,42 +78,46 @@ void Start()
         {
             isDrinking = false;
         }
+        if (!grabInteractable.isSelected && isEmpty)
+
+        {
+            Destroy(gameObject);
+        }
     }
 
-void CheckDrinking()
-{
-    if (playerHead == null) return;
-
-    float distance = Vector3.Distance(transform.position, playerHead.position);
-    float tilt = Vector3.Angle(transform.up, Vector3.down);
-
-    if (distance < drinkDistance && tilt > drinkTiltAngle)
+    void CheckDrinking()
     {
-        if (!isDrinking && drinkCount < 5)
+        if (playerHead == null) return;
+
+        float distance = Vector3.Distance(transform.position, playerHead.position);
+        float tilt = Vector3.Angle(transform.up, Vector3.down);
+
+        if (distance < drinkDistance && tilt > drinkTiltAngle)
         {
-            isDrinking = true;
-            drinkCount++;
-            drunkEffect.beer++;
+            if (!isDrinking && drinkCount < 4)
+            {
+                isDrinking = true;
+                drinkCount++;
+                drunkEffect.beer++;
 
-            float newFill = maxFill - (drinkCount * fillStep);
-            beerMaterial.SetFloat("_Fill", newFill);
+                float newFill = maxFill - (drinkCount * fillStep);
+                beerMaterial.SetFloat("_Fill", newFill);
 
-            Debug.Log("Drinking beer! Fill level: " + newFill);
+                Debug.Log("Drinking beer! Fill level: " + newFill);
 
-            if (drinkingSound) audioSource.Play();
-        }
-        else if (drinkCount == 4)
-        {
-                Destroy(gameObject, 3f);
-
+                if (drinkingSound) audioSource.Play();
+            }
+            else if (drinkCount == 4)
+            {
                 Debug.Log("Beer empty!");
+               // isEmpty = true;
+            }
+        }
+        else
+        {
+            isDrinking = false;
         }
     }
-    else
-    {
-        isDrinking = false;
-    }
-}
 
 
 }
