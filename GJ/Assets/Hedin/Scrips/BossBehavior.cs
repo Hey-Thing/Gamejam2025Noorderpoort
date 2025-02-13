@@ -6,6 +6,8 @@ public class BossBehavior : MonoBehaviour
 {
     public bool beerholding = false;
     public bool bossclose = false;
+    public AudioClip Beer, Beer2;
+    public AudioClip Hardly;
 
     private void Update()
     {
