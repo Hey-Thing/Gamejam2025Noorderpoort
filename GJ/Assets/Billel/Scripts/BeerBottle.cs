@@ -9,16 +9,16 @@ public class BeerBottle : MonoBehaviour
     public float drinkDistance = 0.2f;
     public float drinkTiltAngle = 60f;
     public Material beerMaterial;
-    public UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable capInteractable; // Assign cap object in Inspector
-    public Rigidbody capRb; // Assign cap Rigidbody in Inspector
+    public UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable capInteractable;
+    public Rigidbody capRb;
 
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
     private AudioSource audioSource;
     private bool isDrinking = false;
-    private bool capRemoved = false;
+    public bool capRemoved = false;
+    public bool isEmpty = false;
     private int drinkCount = 0;
     private float maxFill = 0.7f;
-    private float minFill = 0f;
     private float fillStep;
     public drunkeffect drunkEffect;
 
@@ -28,7 +28,7 @@ public class BeerBottle : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         if (drinkingSound) audioSource.clip = drinkingSound;
 
-        fillStep = maxFill / 4f;
+        fillStep = 0.11f;
         beerMaterial.SetFloat("_Fill", maxFill);
 
         if (capInteractable != null)
@@ -40,6 +40,7 @@ public class BeerBottle : MonoBehaviour
         grabInteractable.selectEntered.AddListener(OnBeerGrabbed);
         grabInteractable.selectExited.AddListener(OnBeerDropped);
     }
+
 
     void OnBeerGrabbed(SelectEnterEventArgs args)
     {
@@ -77,6 +78,11 @@ public class BeerBottle : MonoBehaviour
         {
             isDrinking = false;
         }
+        if (!grabInteractable.isSelected && isEmpty)
+
+        {
+            Destroy(gameObject);
+        }
     }
 
     void CheckDrinking()
@@ -93,12 +99,18 @@ public class BeerBottle : MonoBehaviour
                 isDrinking = true;
                 drinkCount++;
                 drunkEffect.beer++;
-                float newFill = Mathf.Max(minFill, maxFill - (fillStep * drinkCount));
+
+                float newFill = maxFill - (drinkCount * fillStep);
                 beerMaterial.SetFloat("_Fill", newFill);
 
                 Debug.Log("Drinking beer! Fill level: " + newFill);
 
                 if (drinkingSound) audioSource.Play();
+            }
+            else if (drinkCount == 4)
+            {
+                Debug.Log("Beer empty!");
+                isEmpty = true;
             }
         }
         else
@@ -106,4 +118,6 @@ public class BeerBottle : MonoBehaviour
             isDrinking = false;
         }
     }
+
+
 }
