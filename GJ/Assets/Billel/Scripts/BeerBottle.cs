@@ -110,7 +110,7 @@ public class BeerBottle : MonoBehaviour
             else if (drinkCount == 4)
             {
                 Debug.Log("Beer empty!");
-               // isEmpty = true;
+                isEmpty = true;
             }
         }
         else
