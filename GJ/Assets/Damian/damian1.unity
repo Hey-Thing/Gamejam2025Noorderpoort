@@ -816,11 +816,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (5)
@@ -890,11 +890,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (15)
@@ -964,11 +964,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (4)
@@ -2150,11 +2150,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer
@@ -2388,11 +2388,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (07)
@@ -2602,11 +2602,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (2)
@@ -2918,11 +2918,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (16)
@@ -3132,11 +3132,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (3)
@@ -4002,11 +4002,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (08)
@@ -4146,11 +4146,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (01)
@@ -4503,11 +4503,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (17)
@@ -4743,11 +4743,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (13)
@@ -5145,11 +5145,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (10)
@@ -5738,11 +5738,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (12)
@@ -6380,11 +6380,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (09)
@@ -6902,11 +6902,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (14)
@@ -8855,11 +8855,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (11)
@@ -9034,11 +9034,11 @@ PrefabInstance:
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: playerHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946483}
     - target: {fileID: 8057443209608748924, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: drunkEffect
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904946485}
     - target: {fileID: 8520388221534998972, guid: a1d7b47e1e4b005448b41f101d93c21a, type: 3}
       propertyPath: m_Name
       value: Beer (06)
