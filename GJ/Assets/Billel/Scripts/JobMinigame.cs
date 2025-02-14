@@ -82,6 +82,14 @@ public class JobMinigameVR : MonoBehaviour
         _userInput = "";
         _answerText.text = "";
     }
+public void DeleteLetter()
+{
+    if (_userInput.Length > 0)
+    {
+        _userInput = _userInput.Substring(0, _userInput.Length - 1);
+        _answerText.text = _userInput; // Update the display
+    }
+}
 
 public void CheckAnswer()
 {
