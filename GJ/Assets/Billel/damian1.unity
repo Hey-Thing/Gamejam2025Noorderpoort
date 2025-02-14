@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 14795b72619b467469c377e0e86b4059, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -394,6 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &46422298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -538,6 +539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &48861358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1078,6 +1080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &384969680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1242,6 +1245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &440597796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1406,6 +1410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1 &455736694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,6 +1658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1 &538000385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,6 +2043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &670897907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3197,6 +3204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1000437566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3620,6 +3628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1160742685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4020,6 +4029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1222543937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4184,6 +4194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1271804575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4348,6 +4359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1 &1273060916
 GameObject:
   m_ObjectHideFlags: 0
@@ -4703,6 +4715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1 &1475582682
 GameObject:
   m_ObjectHideFlags: 0
@@ -4954,6 +4967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1519760207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5271,6 +5285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1576802683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5435,6 +5450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1607521780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5649,6 +5665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1665768202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6503,6 +6520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1779552414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6737,6 +6755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1831324394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6901,6 +6920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1881675422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7528,6 +7548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1001 &1986623015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7847,6 +7868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b51b9b0f83e1a246837fe73c4e11a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDayScene: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
