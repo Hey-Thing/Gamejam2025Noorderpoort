@@ -10826,6 +10826,7 @@ PrefabInstance:
     m_Modifications:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 70738038416566572, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -11022,6 +11023,8 @@ PrefabInstance:
 >>>>>>> parent of 21314fd (Update Office.unity)
 =======
 >>>>>>> parent of 21314fd (Update Office.unity)
+=======
+>>>>>>> parent of 21314fd (Update Office.unity)
     - target: {fileID: 3412461768414422045, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
       propertyPath: m_Name
       value: ComputerUI
@@ -11108,6 +11111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 4867449525698936220, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -11136,6 +11140,8 @@ PrefabInstance:
 >>>>>>> parent of 21314fd (Update Office.unity)
 =======
 >>>>>>> parent of 21314fd (Update Office.unity)
+=======
+>>>>>>> parent of 21314fd (Update Office.unity)
     - target: {fileID: 5231894373797844947, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
       propertyPath: Boss
       value: 
@@ -11144,6 +11150,7 @@ PrefabInstance:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 723360539}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     - target: {fileID: 6222047229036622078, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
@@ -11218,6 +11225,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -40
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 21314fd (Update Office.unity)
 =======
 >>>>>>> parent of 21314fd (Update Office.unity)
 =======
