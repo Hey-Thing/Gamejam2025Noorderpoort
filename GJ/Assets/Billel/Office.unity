@@ -10824,6 +10824,7 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 70738038416566572, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -11016,25 +11017,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -40
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 21314fd (Update Office.unity)
     - target: {fileID: 3412461768414422045, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
       propertyPath: m_Name
       value: ComputerUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 4187557227178720067, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4187557227178720067, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4187557227178720067, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4187557227178720067, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4643809546254848151, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
       propertyPath: m_Pivot.x
@@ -11116,6 +11103,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 4867449525698936220, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -11140,6 +11128,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -14
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 21314fd (Update Office.unity)
     - target: {fileID: 5231894373797844947, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
       propertyPath: Boss
       value: 
@@ -11148,6 +11138,7 @@ PrefabInstance:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 723360539}
+<<<<<<< HEAD
     - target: {fileID: 6222047229036622078, guid: 264fdf50362c3d047812b34bac9fee58, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7718764
@@ -11220,6 +11211,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -40
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 21314fd (Update Office.unity)
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
